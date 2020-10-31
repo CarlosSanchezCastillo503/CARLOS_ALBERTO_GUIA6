@@ -1,0 +1,37 @@
+﻿@model GUIA6.Models.Notas
+@{
+    ViewBag.Title = "index";
+}
+<h2>index</h2>
+@using(Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.NOTA1, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.NOTA1, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.NOTA2, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.NOTA2, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.NOTA3, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.NOTA3, new { @class = "form-control", type = "number" })
+    </div>
+    <br />
+    <div class="form-group">
+        <input id="Submit1" type="submit" value="Create" class="btn btn-success" />
+    </div>
+    <br />
+    <br />
+
+    if (ViewBag.resultado != null)
+    {
+
+        <p>Resultado de sus notas: &nbsp; @ViewBag.resultado</p>
+        <p>Segun su nota:: &nbsp; @ViewBag.Msj</p>
+        
+
+    }
+}
+

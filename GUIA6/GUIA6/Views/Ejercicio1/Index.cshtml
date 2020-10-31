@@ -1,0 +1,36 @@
+﻿@model GUIA6.Models.Medidas
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pesos</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Variable1, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.Variable1, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Variable2, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.Variable2, new { @class = "form-control", type = "number" })
+
+    </div>
+    <br />
+    <div class="form-group">
+        <input id="Submit1" type="submit" value="Create" class="btn btn-success" />
+    </div>
+    <br />
+    <br />
+
+    if (ViewBag.resultado1 != null)
+    {
+        <p>Resultado de celsius a Kelvin: &nbsp; @ViewBag.resultado1</p>
+        <p>Resultado de Kelvin a Celsius: &nbsp; @ViewBag.resultado1_1</p>
+        <p>Resultado de Kilgramos a Libras: &nbsp; @ViewBag.resultado2</p>
+        <p>Resultado de Libras a Kilogramos: &nbsp; @ViewBag.resultado2_2</p>
+        <p>Resultado de Metros a Pulgadas: &nbsp; @ViewBag.resultado3</p>
+
+    }
+}
