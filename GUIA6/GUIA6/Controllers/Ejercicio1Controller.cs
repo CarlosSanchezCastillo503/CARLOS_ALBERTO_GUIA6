@@ -11,7 +11,7 @@ namespace GUIA6.Controllers
     {
         // GET: Ejercicio1
         public ActionResult Index()
-        {
+        {           
             return View();
         }
         [HttpPost]
@@ -30,7 +30,7 @@ namespace GUIA6.Controllers
             double resultado3 = obMedidas.Variable1 * 39.37;/// De metros a Pulgadas
             ViewBag.resultado3 = resultado3;
             return View(obMedidas);
-
+            
 
         }
     }
